@@ -1,0 +1,32 @@
+{
+  "name": "instagram-second-account-reel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Persian Instagram Reels tutorial — 1080x1920, 30s, motion graphics",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "sh scripts/render.sh",
+    "render:master": "remotion render src/index.ts Reel out/.master.mp4 --crf=18",
+    "finalize": "node scripts/finalize.mjs out/.master.mp4 out/reel-second-account.mp4",
+    "verify": "node scripts/verify_output.mjs out/reel-second-account.mp4",
+    "still": "remotion still src/index.ts Reel out/frame.png",
+    "audio": "python3 scripts/make_music.py && python3 scripts/make_sfx.py && python3 scripts/make_voice.py",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.531",
+    "@remotion/fonts": "4.0.531",
+    "@remotion/renderer": "4.0.531",
+    "@remotion/transitions": "4.0.531",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.531"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2",
+    "ffmpeg-static": "5.2.0",
+    "ffprobe-static": "3.1.0",
+    "typescript": "5.6.3"
+  }
+}

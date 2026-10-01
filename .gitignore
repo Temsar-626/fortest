@@ -1,0 +1,11 @@
+node_modules/
+.remotion/
+*.log
+*.tsbuildinfo
+__pycache__/
+.DS_Store
+
+# Render artefacts are ignored, except the deliverable itself which is
+# committed so the finished Reel is available straight from the repo.
+out/*
+!out/reel-second-account.mp4

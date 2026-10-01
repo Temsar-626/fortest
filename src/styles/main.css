@@ -1,0 +1,26 @@
+/* Global reset for the rendered canvas.
+   Fonts are loaded through `src/fonts.ts` (delayRender + FontFace) so that
+   Persian shaping is guaranteed before the first frame is captured. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b0b10;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+/* Never let a Persian line be broken letter-by-letter. */
+[dir='rtl'],
+[dir='rtl'] * {
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
