@@ -1,0 +1,12 @@
+# Python tooling for the Reel pipeline.
+#
+#   pip install -r requirements.txt
+#
+# numpy     -> music bed + sound-effect synthesis (scripts/make_music.py, make_sfx.py)
+#             and narration levelling / limiting (scripts/normalize_voice.py)
+# edge-tts  -> Persian neural voice-over (scripts/make_voice.py)
+# Pillow    -> QC only: reading rendered frames (scripts/qc_*.py, measure_text.py,
+#             ascii_preview.py). Not needed to render the video.
+numpy==2.2.6
+edge-tts==7.2.8
+Pillow==12.3.0
